@@ -8,7 +8,7 @@ DEV_URI = 'ws://10.0.0.201:3000'
 # async def handler(socket):
 
 async def connect():
-    async with websockets.connect(DEV_URI) as socket:
+    async with websockets.connect(APP_URI) as socket:
         # of course don't actually hardcode this
         connectMsg = {'type': 'receiver_connect', 'ruid': 'peyote', 'key': 'wile.e.'}
         await socket.send(json.dumps(connectMsg))
